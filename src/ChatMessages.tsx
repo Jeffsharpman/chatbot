@@ -1,8 +1,15 @@
+import { useEffect, useRef } from "react";
 import { useChat } from "./hooks/useChat";
 import ChatMessage from "./ChatMessage";
 
 const ChatMessages = () => {
   const { chatMessages, isBotLoading, addNewMessage } = useChat();
+  const messageEndRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    messageEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [chatMessages, isBotLoading]);
+
   return (
     <main className="mx-auto flex w-full max-w-4xl flex-col gap-8 px-5 pb-48 pt-8 sm:px-8">
       {chatMessages.length === 0 ? (
@@ -27,8 +34,6 @@ const ChatMessages = () => {
                 key={cm}
                 onClick={() => {
                   addNewMessage(cm);
-                  // Optional: automatically send it
-                  // handleSend(question);
                 }}
                 className="px-4 py-3 text-left rounded-xl border border-orange-500/30 
                      bg-orange-500/10 hover:bg-orange-500/20 text-gray-200 
@@ -69,6 +74,9 @@ const ChatMessages = () => {
           </div>
         </section>
       )}
+
+      {/* Invisible anchor element to force scroll to the bottom */}
+      <div ref={messageEndRef} />
     </main>
   );
 };
