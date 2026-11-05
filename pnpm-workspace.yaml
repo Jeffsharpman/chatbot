@@ -1,0 +1,7 @@
+allowBuilds:
+  '@google/genai': false
+  core-js: false
+  esbuild: false
+  netlify-cli: false
+  protobufjs: false
+  unix-dgram: false
