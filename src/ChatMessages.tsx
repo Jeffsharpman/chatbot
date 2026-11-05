@@ -1,4 +1,4 @@
-import { useChat } from "../hooks/useChat";
+import { useChat } from "./hooks/useChat";
 import ChatMessage from "./ChatMessage";
 
 const ChatMessages = () => {
@@ -42,8 +42,7 @@ const ChatMessages = () => {
       ) : (
         <>
           {chatMessages.map((chatMessage) => (
-            // <ChatMessage key={chatMessage.id} chatMessage={chatMessage} />
-            <></>
+            <ChatMessage key={chatMessage.id} chatMessage={chatMessage} />
           ))}
         </>
       )}

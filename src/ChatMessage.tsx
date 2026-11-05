@@ -1,5 +1,5 @@
-import type { chatmessageProps } from "../data/defaultMessages";
 import Markdown from "markdown-to-jsx";
+import type { chatmessageProps } from "./data/defaultMessages";
 
 type ChatMessageProps = {
   chatMessage: chatmessageProps;
