@@ -1,4 +1,4 @@
-import { useChat } from "../hooks/useChat";
+import { useChat } from "./hooks/useChat";
 
 const Header = () => {
   const { clearChatHistory } = useChat();

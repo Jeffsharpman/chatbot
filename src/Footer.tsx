@@ -1,5 +1,5 @@
 import { type KeyboardEvent } from "react";
-import { useChat } from "../hooks/useChat";
+import { useChat } from "./hooks/useChat";
 
 const Footer = () => {
   const {message, setMessage} = useChat();
