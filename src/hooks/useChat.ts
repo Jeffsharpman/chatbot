@@ -1,4 +1,3 @@
-import { getAiResponse } from "../libs/service";
 import { chatStore } from "../store/chatStore";
 
 export const useChat = () => {
