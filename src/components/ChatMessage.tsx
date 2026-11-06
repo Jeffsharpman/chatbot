@@ -1,4 +1,5 @@
 import type { chatmessageProps } from "../data/defaultMessages";
+import ReactMarkdown from "react-markdown";
 
 type ChatMessageProps = {
   chatMessage: chatmessageProps;
@@ -33,7 +34,10 @@ const ChatMessage = ({
             </svg>
           </div>
           <div className="min-w-0 flex-1">
-            <p className="text-[17px] leading-7">{message}</p>
+            {/* <p className="text-[17px] leading-7">{message}</p> */}
+            <div className="text-gray-200 text-sm leading-relaxed space-y-2">
+              <ReactMarkdown>{message}</ReactMarkdown>
+            </div>
             <p className="mt-2 text-xs text-muted-foreground">Sharp · {time}</p>
           </div>
         </section>
